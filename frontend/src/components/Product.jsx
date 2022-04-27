@@ -1,30 +1,17 @@
-const Product = ({ _id, image, name, price }) => {
+import Rating from "./Rating";
+import { Link } from "react-router-dom";
+
+const Product = ({ _id, image, name, price, rating, numReviews }) => {
   return (
     <aside className="card">
-      <a href={`/product/${_id}`}>
+      <Link to={`/product/${_id}`}>
         <img className="medium" src={image} alt={name} />
-      </a>
+      </Link>
       <div className="card-body">
         <a href="product.html">
           <h2>{name}</h2>
         </a>
-        <div className="rating">
-          <span>
-            <i className="fa fa-star"></i>
-          </span>
-          <span>
-            <i className="fa fa-star"></i>
-          </span>
-          <span>
-            <i className="fa fa-star"></i>
-          </span>
-          <span>
-            <i className="fa fa-star"></i>
-          </span>
-          <span>
-            <i className="fa fa-star"></i>
-          </span>
-        </div>
+        <Rating rating={rating} numReviews={numReviews} />
         <div className="price">${price}</div>
       </div>
     </aside>
