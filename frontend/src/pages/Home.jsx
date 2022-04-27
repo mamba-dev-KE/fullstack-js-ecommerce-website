@@ -3,6 +3,7 @@ import Product from "../components/Product";
 
 const Home = () => {
   const { products } = useSelector((store) => store.products);
+
   return (
     <div className="row center">
       {products.map((product) => (

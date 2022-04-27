@@ -2,7 +2,7 @@
   "name": "fullstack-js-ecommerce-website",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "./backend/app.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon ."
@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.18.0"
   },
   "devDependencies": {
