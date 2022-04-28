@@ -8,14 +8,13 @@ const initialState = {
   errorMessage: "",
 };
 
-const URL = "http://localhost:5000/api/products";
-
 export const getProducts = createAsyncThunk(
   "products/getProducts",
   async (_, thunkAPI) => {
+    const URL = "http://localhost:5000/api/products";
     try {
-      const response = await axios.get(URL);
-      return response.data;
+      const { data } = await axios.get(URL);
+      return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -25,8 +24,7 @@ export const getProducts = createAsyncThunk(
 const productSlice = createSlice({
   name: "products",
   initialState,
-  reducers: {
-  },
+  reducers: {},
   extraReducers: {
     [getProducts.pending]: (state) => {
       state.isLoading = true;

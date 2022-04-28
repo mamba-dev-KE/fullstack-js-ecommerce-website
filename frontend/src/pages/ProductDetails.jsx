@@ -1,20 +1,26 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/Rating";
+import Loader from "../components/Loader";
+import MessageBox from "../components/MessageBox";
+import { useEffect } from "react";
+import { getProductDetails } from "../app/features/productDetails";
 
 const ProductDetails = () => {
-  const { products } = useSelector((store) => store.products);
+  const dispatch = useDispatch();
+
+  const { product, isLoading, isError, errorMessage } = useSelector(
+    (store) => store.productDetails
+  );
 
   const { id } = useParams();
 
-  const product = products.find((item) => item._id === id);
+  useEffect(() => {
+    dispatch(getProductDetails(id));
+  }, []);
 
   const { image, name, price, rating, description, numReviews, countInStock } =
     product;
-
-  if (!product) {
-    return <div>Product Not Found</div>;
-  }
 
   return (
     <div>

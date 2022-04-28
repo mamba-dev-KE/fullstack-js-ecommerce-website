@@ -2,11 +2,20 @@ import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
+import { getProducts } from "../app/features/products";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const Home = () => {
+  const dispatch = useDispatch();
+
   const { products, isLoading, isError, errorMessage } = useSelector(
     (store) => store.products
   );
+
+  useEffect(() => {
+    dispatch(getProducts());
+  }, []);
 
   return (
     <div>

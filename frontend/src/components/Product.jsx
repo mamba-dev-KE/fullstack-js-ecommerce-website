@@ -1,9 +1,17 @@
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
+import { getProductDetails } from "../app/features/productDetails";
+import { useDispatch } from "react-redux";
 
 const Product = ({ _id, image, name, price, rating, numReviews }) => {
+  const dispatch = useDispatch();
+
+  const handleClick = () => {
+    dispatch(getProductDetails(_id));
+  };
+
   return (
-    <aside className="card">
+    <aside className="card" onClick={handleClick}>
       <Link to={`/product/${_id}`}>
         <img className="medium" src={image} alt={name} />
       </Link>
