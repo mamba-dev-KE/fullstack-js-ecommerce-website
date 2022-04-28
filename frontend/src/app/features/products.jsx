@@ -26,11 +26,6 @@ const productSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    // getProduct: (state, action) => {
-    //   const product = state.products.find(
-    //     (item) => item.id === action.payload.id
-    //   );
-    // },
   },
   extraReducers: {
     [getProducts.pending]: (state) => {
