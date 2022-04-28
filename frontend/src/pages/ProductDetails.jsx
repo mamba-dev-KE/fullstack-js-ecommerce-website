@@ -4,7 +4,7 @@ import Rating from "../components/Rating";
 import Loader from "../components/Loader";
 import MessageBox from "../components/MessageBox";
 import { useEffect } from "react";
-import { getProductDetails } from "../app/features/productDetails";
+import { getProductDetails } from "../app/features/productDetailsSlice";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();

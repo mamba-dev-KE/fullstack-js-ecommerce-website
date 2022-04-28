@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import Loader from "../components/Loader";
 import MessageBox from "../components/MessageBox";
 import Product from "../components/Product";
-import { getProducts } from "../app/features/products";
+import { getProducts } from "../app/features/productsSlice";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 

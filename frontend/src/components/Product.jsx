@@ -1,6 +1,6 @@
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
-import { getProductDetails } from "../app/features/productDetails";
+import { getProductDetails } from "../app/features/productDetailsSlice";
 import { useDispatch } from "react-redux";
 
 const Product = ({ _id, image, name, price, rating, numReviews }) => {

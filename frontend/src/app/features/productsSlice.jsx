@@ -21,8 +21,8 @@ export const getProducts = createAsyncThunk(
   }
 );
 
-const productSlice = createSlice({
-  name: "products",
+const productsSlice = createSlice({
+  name: "productList",
   initialState,
   reducers: {},
   extraReducers: {
@@ -43,5 +43,5 @@ const productSlice = createSlice({
   },
 });
 
-export const { products } = productSlice.actions;
-export default productSlice.reducer;
+export const { products } = productsSlice.actions;
+export default productsSlice.reducer;
